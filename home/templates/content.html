@@ -1,4 +1,11 @@
 {% load static %}
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/select2/select2.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/select2/select2-metronic.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css'%}"/>
+<!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
@@ -924,44 +931,58 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="#">
+												<form role="form" action="AddPersonelCv" method="POST" enctype="multipart/form-data">
+													{% csrf_token %}
 													<div class="form-group">
-														<label class="control-label">First Name</label>
-														<input type="text" placeholder="John" class="form-control"/>
+														<label class="control-label">Ad:</label>
+														<input type="text" name="ad" placeholder="..." class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Last Name</label>
-														<input type="text" placeholder="Doe" class="form-control"/>
+														<label class="control-label">Soyad</label>
+														<input type="text" name="Soyad" placeholder=".." class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Mobile Number</label>
-														<input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control"/>
+														<label class="control-label">Telefon No:</label>
+														<input type="text" name="telefon" placeholder="+1 646 580 DEMO (6284)" class="form-control"/>
+													</div>
+											
+													<div class="form-group">
+														<label class="control-label">Hakkımda</label>
+														<textarea class="form-control" name="hakkımda" rows="3" placeholder="..."></textarea>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Interests</label>
-														<input type="text" placeholder="Design, Web etc." class="form-control"/>
+														<label class="control-label">Web site adresi:</label>
+														<input type="text" name="siteurl"placeholder="http://www.mywebsite.com" class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Occupation</label>
-														<input type="text" placeholder="Web Developer" class="form-control"/>
-													</div>
-													<div class="form-group">
-														<label class="control-label">About</label>
-														<textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
-													</div>
-													<div class="form-group">
-														<label class="control-label">Website Url</label>
-														<input type="text" placeholder="http://www.mywebsite.com" class="form-control"/>
+														<label class="control-label">Özet Bilgi
+														<span class="required">
+															 *
+														</span>
+														</label>
+													
+															<textarea class="ckeditor form-control" name="editor2" rows="6"  placeholder="özet bilgi yaz.." data-error-container="#editor2_error"></textarea>
+															<div id="editor2_error">
+															</div>
+														
 													</div>
 													<div class="margiv-top-10">
-														<a href="#" class="btn green">
-															 Save Changes
+														<button type="submit" class="btn btn-success" ></button>
+															 Kaydet
 														</a>
-														<a href="#" class="btn default">
-															 Cancel
-														</a>
+														<!-- <a href="#" class="btn default">
+															 Vazgeç
+														</a> -->
 													</div>
 												</form>
+<!-- 
+												<form action="" method="POST">
+													{% csrf_token %}
+													{{ form.as_p }}
+													<input type="submit" value="Kaydet">
+
+												</form>
+												 -->
 											</div>
 											<div id="tab_2-2" class="tab-pane">
 												<p>
@@ -1604,3 +1625,17 @@
 		</div>
 	</div>
 	<!-- END CONTENT -->
+
+
+
+
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/dist/jquery.validate.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/dist/additional-methods.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/select2/select2.min.js'}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/ckeditor/ckeditor.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap-markdown/lib/markdown.js'%}"></script>
+<!-- END PAGE LEVEL PLUGINS -->

@@ -9,7 +9,7 @@ class ImageInline(admin.TabularInline):
 
 
 class CvAdmin(admin.ModelAdmin):
-    list_display = ('title','status')
+    list_display = ('title','status','personnel')
     list_filter = ['status']
 
 class PersonnelAdmin(admin.ModelAdmin):

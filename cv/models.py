@@ -25,12 +25,16 @@ class Personnel(models.Model):
 
 
 class Cv(models.Model):
-    personnel = models.ForeignKey(Personnel,on_delete=models.CASCADE)   
-    title = models.CharField(max_length=50)
-    keywords = models.CharField(max_length=200)
-    description =models.CharField(max_length=200)
+    personnel = models.ForeignKey(Personnel,on_delete=models.CASCADE) 
+    name = models.CharField(blank=True,max_length=50)
+    surname = models.CharField(blank=True,max_length=50)
+    email =models.EmailField(blank=True,max_length=13)
+    telefon = models.CharField(blank=True,max_length=16)  
+    title = models.CharField(blank=True,max_length=50)
+    ozet = models.CharField(blank=True,max_length=200)
+    description =models.CharField(blank=True,max_length=200)
     cvImage = models.ImageField(blank=True,upload_to='images/')
-    status = models.CharField(max_length=10)
+    status = models.CharField(blank=True,max_length=10)
     slug =models.SlugField()
     create_time=models.DateField(auto_now_add=True)
     update_time=models.DateField(auto_now=True) 
