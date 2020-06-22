@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +83,17 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'mysecretpassword',
+#         'PORT': 5432,
+#         'HOST': 'localhost'
+#     }
+# }
 
 
 # Password validation

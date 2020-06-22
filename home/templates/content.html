@@ -966,23 +966,25 @@
 															</div>
 														
 													</div>
-													<div class="margiv-top-10">
-														<button type="submit" class="btn btn-success" ></button>
-															 Kaydet
-														</a>
-														<!-- <a href="#" class="btn default">
+													<div class="margin-top-10">
+														<button type="submit" value="Kaydet" class="btn btn-danger" > Kaydet </button>
+															
+														
+														<a href="#" class="btn default">
 															 Vazgeç
-														</a> -->
+														</a> 
 													</div>
 												</form>
-<!-- 
-												<form action="" method="POST">
+												<!-- {% if errors %}
+													{{ errors }}
+												{% endif %}
+												<form action="AddPersonelCv" method="POST">
 													{% csrf_token %}
 													{{ form.as_p }}
 													<input type="submit" value="Kaydet">
 
-												</form>
-												 -->
+												</form> -->
+											
 											</div>
 											<div id="tab_2-2" class="tab-pane">
 												<p>
@@ -1614,6 +1616,7 @@
 										</div>
 									</div>
 								</div>
+
 							</div>
 							<!--end tab-pane-->
 						</div>
@@ -1625,6 +1628,9 @@
 		</div>
 	</div>
 	<!-- END CONTENT -->
+
+	<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+	<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 
 
 
