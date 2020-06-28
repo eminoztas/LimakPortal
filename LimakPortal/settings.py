@@ -33,14 +33,16 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'cv.apps.CvConfig',
     'home.apps.HomeConfig',
+    'WebApi.apps.WebapiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'phone_field',
     'ckeditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'LimakPortal.wsgi.application'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'width': 1110,
+    },
+}
 
 
 # Database
@@ -135,3 +145,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']

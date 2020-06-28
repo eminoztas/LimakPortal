@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from datetime import date
+from phone_field import PhoneField
 
 
 
@@ -26,23 +28,21 @@ class Personnel(models.Model):
 
 class Cv(models.Model):
     personnel = models.ForeignKey(Personnel,on_delete=models.CASCADE) 
-    name = models.CharField(blank=True,max_length=50)
-    surname = models.CharField(blank=True,max_length=50)
-    email =models.EmailField(blank=True,max_length=13)
-    telefon = models.CharField(blank=True,max_length=16)  
-    title = models.CharField(blank=True,max_length=50)
-    ozet = models.CharField(blank=True,max_length=200)
-    description =models.CharField(blank=True,max_length=200)
+    FirstName = models.CharField(blank=True,max_length=50)
+    LastName = models.CharField(blank=True,max_length=50)
+    DateOfBirth = models.DateField(editable=True, blank=True)
+    email = models.EmailField(blank=True,max_length=13)
+    Tel = models.CharField(blank=True,max_length=16)  
+    Summary = models.CharField(blank=True,max_length=200)
     cvImage = models.ImageField(blank=True,upload_to='images/')
-    status = models.CharField(blank=True,max_length=10)
-    slug =models.SlugField()
-    create_time=models.DateField(auto_now_add=True)
-    update_time=models.DateField(auto_now=True) 
+    EducationalLevel = models.CharField(blank=True,max_length=10)
+    Adress = models.CharField(blank=True,max_length=100)
+    # create_time=models.DateField(auto_now_add=True)
+    # update_time=models.DateField(auto_now=True) 
+    # slug =models.SlugField()
    
-    
-
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.FirstName
 
 
 class Image(models.Model):

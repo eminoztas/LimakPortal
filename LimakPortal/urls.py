@@ -19,11 +19,14 @@ from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('cv/', include('cv.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include('WebApi.urls')),
+    # path(r'^api-auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:

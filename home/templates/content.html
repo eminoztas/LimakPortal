@@ -110,7 +110,7 @@
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<h3 class="page-title">
-					User Profile <small>user profile sample</small>
+					Kullanıcı Profili 
 					</h3>
 					<ul class="page-breadcrumb breadcrumb">
 						<li class="btn-group">
@@ -148,20 +148,15 @@
 						<li>
 							<i class="fa fa-home"></i>
 							<a href="index.html">
-								Home
+								Anasayfa
 							</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
 							<a href="#">
-								Extra
+								Cv
 							</a>
-							<i class="fa fa-angle-right"></i>
-						</li>
-						<li>
-							<a href="#">
-								User Profile
-							</a>
+					
 						</li>
 					</ul>
 					<!-- END PAGE TITLE & BREADCRUMB-->
@@ -176,24 +171,20 @@
 						<ul class="nav nav-tabs">
 							<li class="active">
 								<a href="#tab_1_1" data-toggle="tab">
-									 Overview
+									 Cv Listele
 								</a>
 							</li>
 							<li>
 								<a href="#tab_1_3" data-toggle="tab">
-									 Account
+									 Cv
 								</a>
 							</li>
 							<li>
 								<a href="#tab_1_4" data-toggle="tab">
-									 Projects
+									 Çalıştığı Projeler
 								</a>
 							</li>
-							<li>
-								<a href="#tab_1_6" data-toggle="tab">
-									 Help
-								</a>
-							</li>
+						
 						</ul>
 						<div class="tab-content">
 							<div class="tab-pane active" id="tab_1_1">
@@ -321,11 +312,7 @@
 														 Latest Customers
 													</a>
 												</li>
-												<li>
-													<a href="#tab_1_22" data-toggle="tab">
-														 Feeds
-													</a>
-												</li>
+											
 											</ul>
 											<div class="tab-content">
 												<div class="tab-pane active" id="tab_1_11">
@@ -334,166 +321,26 @@
 														<thead>
 														<tr>
 															<th>
-																<i class="fa fa-briefcase"></i> Company
+																<i class="fa fa-briefcase"></i> Adı
 															</th>
 															<th class="hidden-xs">
-																<i class="fa fa-question"></i> Descrition
+																<i class="fa fa-question"></i> Soyadı
 															</th>
 															<th>
-																<i class="fa fa-bookmark"></i> Amount
+																<i class="fa fa-bookmark"></i> Resim
 															</th>
 															<th>
 															</th>
 														</tr>
 														</thead>
 														<tbody>
-														<tr>
-															<td>
-																<a href="#">
-																	 Pixel Ltd
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Server hardware purchase
-															</td>
-															<td>
-																 52560.10$
-																<span class="label label-success label-sm">
-																	 Paid
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs green-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 Smart House
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Office furniture purchase
-															</td>
-															<td>
-																 5760.00$
-																<span class="label label-warning label-sm">
-																	 Pending
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 FoodMaster Ltd
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Company Anual Dinner Catering
-															</td>
-															<td>
-																 12400.00$
-																<span class="label label-success label-sm">
-																	 Paid
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 WaterPure Ltd
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Payment for Jan 2013
-															</td>
-															<td>
-																 610.50$
-																<span class="label label-danger label-sm">
-																	 Overdue
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs red-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 Pixel Ltd
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Server hardware purchase
-															</td>
-															<td>
-																 52560.10$
-																<span class="label label-success label-sm">
-																	 Paid
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs green-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 Smart House
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Office furniture purchase
-															</td>
-															<td>
-																 5760.00$
-																<span class="label label-warning label-sm">
-																	 Pending
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																	 FoodMaster Ltd
-																</a>
-															</td>
-															<td class="hidden-xs">
-																 Company Anual Dinner Catering
-															</td>
-															<td>
-																 12400.00$
-																<span class="label label-success label-sm">
-																	 Paid
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">
-																	 View
-																</a>
-															</td>
-														</tr>
+															{% for dr in cv %}
+															<tr>
+															<td>{{ dr.name }}</td>
+															<td>{{ dr.surname }}</td>	
+															<td>{{ dr.cvImage }}</td>	
+															</tr>
+															{% endfor %}
 														</tbody>
 														</table>
 													</div>
@@ -931,7 +778,7 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="AddPersonelCv" method="POST" enctype="multipart/form-data">
+												<!-- <form role="form" action="AddPersonelCv" method="POST" enctype="multipart/form-data">
 													{% csrf_token %}
 													<div class="form-group">
 														<label class="control-label">Ad:</label>
@@ -974,8 +821,8 @@
 															 Vazgeç
 														</a> 
 													</div>
-												</form>
-												<!-- {% if errors %}
+												</form> -->
+												{% if errors %}
 													{{ errors }}
 												{% endif %}
 												<form action="AddPersonelCv" method="POST">
@@ -983,7 +830,7 @@
 													{{ form.as_p }}
 													<input type="submit" value="Kaydet">
 
-												</form> -->
+												</form>
 											
 											</div>
 											<div id="tab_2-2" class="tab-pane">
