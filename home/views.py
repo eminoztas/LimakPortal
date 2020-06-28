@@ -76,3 +76,12 @@ def AddPersonelCv3(request):
         print(form.errors)
 
     return render(request, 'index.html', {})
+
+
+def CvListele(request):
+    cv = Cv.objects.all()
+    form = CvForm()
+    context = {'cv': cv, 'form': form}
+    "print(form)"
+    return render(request, 'personnelCv.html', context)
+    # return HttpResponse("You're looking at question %s." % text)

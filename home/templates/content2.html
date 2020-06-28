@@ -69,9 +69,11 @@
 												<form action="AddPersonelCv" method="POST">
 													{% csrf_token %}
 													{{ form.as_p }}
-													<input type="submit" class="btn btn-primary" value="Kaydet">
+                                                    
+													<input type="submit" id="multiline-snackbar" class="btn btn-primary" value="Kaydet">
 
 												</form>
+                                             
                                         
 
                                             <div class="source-preview-wrapper">
@@ -227,3 +229,37 @@
             
 	<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 	<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
+
+<script type="text/javascript">
+    $('#multiline-snackbar').on('click', function () {
+        new PNotify({
+            text    : 'Cv başarılı bir şekilde kaydedildi.',
+            confirm : {
+                confirm: true,
+                buttons: [
+                    {
+                        text    : 'Başarılı',
+                        addClass: 'btn btn-link',
+                        click   : function (notice) {
+                            notice.remove();
+                        }
+                    },
+                    null
+                ]
+            },
+            buttons : {
+                closer : false,
+                sticker: false
+            },
+            animate : {
+                animate  : true,
+                in_class : 'slideInDown',
+                out_class: 'slideOutUp'
+            },
+            addclass: 'md multiline'
+        });
+    });
+</script>
+
