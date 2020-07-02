@@ -1,3 +1,16 @@
+
+{% extends "homeBasePage.html" %} 
+
+{% block title %} Limak Portal {% endblock %} 
+
+{% block sidebar2 %} 
+{% include "sidebar.html" %}
+{% endblock %}
+
+
+{% block content %} 
+
+
 	{% load static %}
     <div class="content-wrapper">
                 <div class="content custom-scrollbar">
@@ -41,7 +54,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link btn active" id="home-tab" data-toggle="tab" href="#home-tab-pane" role="tab" aria-controls="home-tab-pane" aria-expanded="true">Kişisel Bilgiler</a>
                                     </li>
-                                
+                                   
                                     <li class="nav-item">
                                         <a class="nav-link btn" id="budget-summary-tab" data-toggle="tab" href="#budget-summary-tab-pane" role="tab" aria-controls="budget-summary-tab-pane">Eğitim Durumu</a>
                                     </li>
@@ -51,10 +64,11 @@
                                     </li>
                                       <li class="nav-item">
                                         <a class="nav-link btn" id="language" data-toggle="tab" href="#language-pane" role="tab" aria-controls="language-pane">Diller</a>
-                                    </li> 
+                                    </li>
                                 </ul>
 
-                               
+                                <div class="tab-content">
+                                   
                                     <div class="content container">
                                     <div class="row">
 
@@ -63,7 +77,7 @@
                                             	{% if errors %}
 													{{ errors }}
 												{% endif %}
-												<form action="AddPersonelCv" method="POST">
+												<form action="ContentEdit/{{form.ID.value}}" method="POST">
                                                  <div class="tab-content">
 													
                                                     <div class="tab-pane fade show active p-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
@@ -78,6 +92,9 @@
                                                     <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="25"
                                                             aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
                                                     </div>
+                                                 </div>
+                                                 <div>
+                                                 
                                                  </div>
 												<div class="tab-pane fade p-3" id="budget-summary-tab-pane" role="tabpanel" aria-labelledby="budget-summary-tab">
                                                     {% csrf_token %}
@@ -123,12 +140,12 @@
                                                 </div>
                                                 <br>
                                                 <br>
-                                                     <input type="submit" id="multiline-snackbar" class="btn btn-secondary" value="Kaydet">
+                                                     <input type="submit" id="multiline-snackbar-guncelle" class="btn btn-secondary" value="Güncelle">
                                                 </div>
                                          
 												</form>
+                                             
                                         
-                                        </div>
 
                                             <div class="source-preview-wrapper">
                                                 <div class="preview">
@@ -146,9 +163,9 @@
                                 
                                     </div>
                                     <!-- / FORM CONTROLS -->
-                                    
-                               
-
+                                    </div>
+                                
+</div>
                             </div>
                                 <!-- CONTENT -->
                         </div>
@@ -287,9 +304,10 @@
 
 
 <script type="text/javascript">
-    $('#multiline-snackbar').on('click', function () {
+   
+         $("#multiline-snackbar-guncelle").on('click', function () {
         new PNotify({
-            text    : 'Cv başarılı bir şekilde kaydedildi.',
+            text    : 'Cv başarılı bir şekilde güncellendi.',
             confirm : {
                 confirm: true,
                 buttons: [
@@ -315,8 +333,11 @@
             addclass: 'md multiline'
         });
     });
-
-
-
-      
+ 
+   
 </script>
+
+
+
+{% endblock %}
+

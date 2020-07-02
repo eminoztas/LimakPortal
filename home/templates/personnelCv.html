@@ -9,11 +9,9 @@
 
 
 {% block content %} 
-
-
-	                    <!-- CONTENT -->
-                         <div class="content-wrapper">
-			
+         
+ {% load static %}     
+  <div class="content-wrapper">
                 <div class="content custom-scrollbar">
 
                     <div id="e-commerce-products" class="page-layout carded full-width">
@@ -34,48 +32,155 @@
                                             <i class="icon-cube-outline s-6"></i>
                                         </div>
                                         <div class="logo-text">
-                                            <div class="h4">Products</div>
-                                            <div class="">Total Products: 20</div>
+                                            <div class="h4">Kişisel Cv</div>
+                                            <div class="">Toplam Cv: 10</div>
                                         </div>
                                     </div>
 
                                 </div>
                                 <!-- / APP TITLE -->
-
+                            
                                 <!-- SEARCH -->
-                              
-                                  
+                                <div class="search-wrapper px-2">
 
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="icon icon-magnify"></i>
+                                            </button>
+                                        </span>
+                                        <input id="products-search-input" type="text" class="form-control" placeholder=".   ARA" aria-label="Search" />
+                                    </div>
+
+                                </div>
+                                <!-- / SEARCH -->
+                          
+                             
                             </div>
                             <!-- / HEADER -->
 
                             <div class="page-content-card">
-
+                            <br>
+                                <div class="col-auto">
+                                    <a href="/Anasayfa" class="btn btn-outline-secondary">Yeni Cv EKle</a>
+                                </div>
                                 <table id="e-commerce-products-table" class="table dataTable">
-                                   <thread>
-            					<th>FirstName</th>
-          						 <th>LastName</th>
-            					<th>Güncelle</th>
-       							 </thread>
-        					<tbody>
-          					 {% for item in items %}
-          					 <tr>
-            			   <td>{{ item.FirstName }}</td>
-            			   <td>{{ item.LastName }}</td>
-             			  <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/{{item.LastName}}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></a></td>
-           					</tr>
-           				{% endfor %}
-        					</tbody>
-        					</table>
+                                    <thead>
+                                        <tr>
+                              
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Profil</span>
+                                                </div>
+                                            </th>
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Ad</span>
+                                                </div>
+                                            </th>
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Soyad</span>
+                                                </div>
+                                            </th>
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Email</span>
+                                                </div>
+                                            </th>
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Açıklama</span>
+                                                </div>
+                                            </th>
+
+                                            <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Güncelle</span>
+                                                </div>
+                                            </th>
+                                             <th>
+                                                <div class="table-header">
+                                                    <span class="column-title">Sil</span>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+<tbody>
+    
+	{% for item in items %}
+          					 		<tr>
+									<td>
+                                       <img class="product-image" src="../assets/images/ecommerce/product-image-placeholder.png">
+                                    </td>
+            			  			<td>{{ item.FirstName }}</td>
+            			   			<td>{{ item.LastName }}</td>
+									<td>{{ item.Email }}</td>
+									<td>{{ item.Summary }}</td>
+             			  			<td><a href="/edit/{{item.ID}}"  class="btn btn-success"><span class="icon icon-pencil s-4"></span></a></td>
+                                    <td><a href="/delete/{{item.ID}}" id="Sil" class="btn btn-danger"><span class="icon-delete-circle"></span></a></td>
+           							</tr>
+           							{% endfor %}
+    
+</tbody>
+                                   
+                                </table>
                             </div>
                         </div>
                         <!-- / CONTENT -->
                     </div>
-				<script type="text/javascript" src="../assets/js/apps/e-commerce/products/products.js"></script>
 
-               
+                    <script type="text/javascript" src="../assets/js/apps/e-commerce/products/products.js"></script>
+
+                </div>
             </div>
 
-						
-{% endblock %}
+
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $('#Sil').click(function(e) {
+        new PNotify({
+            text    : 'Cv başarılı bir şekilde kaydedildi.',
+            confirm : {
+                confirm: true,
+                buttons: [
+                    {
+                        text    : 'Başarılı',
+                        addClass: 'btn btn-link',
+                        click   : function (notice) {
+                            notice.remove();
+                        }
+                    },
+                    null
+                ]
+            },
+            buttons : {
+                closer : false,
+                sticker: false
+            },
+            animate : {
+                animate  : true,
+                in_class : 'slideInDown',
+                out_class: 'slideOutUp'
+            },
+            addclass: 'md multiline'
+        });
+    });
+
+
+
+    });
+ });
+   
+</script>
+
+
+	{% endblock %}
+
 

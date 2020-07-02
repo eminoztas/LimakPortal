@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en" class="no-js">
 <!-- 
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.1.1
 Version: 2.0.2
@@ -12,7 +12,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 {% load static %}
@@ -26,6 +26,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
+
 
     <!-- STYLESHEETS -->
     <style type="text/css">
@@ -49,7 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- Main CSS -->
     <link type="text/css" rel="stylesheet" href="{% static 'assets/css/main.css' %}">
     <!-- / STYLESHEETS -->
-
+    <script type="text/javascript" src="{% static 'assets/js/apps/e-commerce/products/products.js' %}"></script>
     <!-- JAVASCRIPT -->
     <!-- jQuery -->
     <script type="text/javascript" src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
@@ -78,7 +83,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <body class="layout layout-vertical layout-left-navigation layout-above-toolbar">
     <main>
-    {% block footer %} {% endblock %}
+    {% block header %} {% endblock %}
     {% include 'toolbar.html' %}
 
     <div id="wrapper">
